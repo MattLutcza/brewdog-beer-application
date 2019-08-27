@@ -1,0 +1,77 @@
+
+<div>
+    <page-header [pageHeader]="'Search Beers'" [linkOneText]="'Home'" [linkOne]="'/home'"></page-header>
+
+    <div class="search-error" *ngIf="shouldShowSearchError">
+        Please Enter Search Criteria
+    </div>
+
+    <section class="search-criteria">
+        <div class="search-by">
+            <div>
+                <label for="name">Beer Name</label>
+                <input id="name" #name type="text" (blur)="addSearchCriteria('beer_name', name.value)" />
+            </div>
+            <div>
+                <label for="food">Pairs Well With</label>
+                <input id="food" #food type="text" (blur)="addSearchCriteria('food', food.value)" />
+            </div>
+            <div>
+                <label for="abvGreaterThan">ABV Greater Than</label>
+                <input id="abvGreaterThan" #abvGreaterThan type="number" (blur)="addSearchCriteria('abv_gt', abvGreaterThan.value)" />
+            </div>
+            <div>
+                <label for="abvLessThan">ABV Less Than</label>
+                <input id="abvLessThan" #abvLessThan type="number" (blur)="addSearchCriteria('abv_lt', abvLessThan.value)" />
+            </div>
+            <div>
+                <label for="ibuGreaterThan">IBU Greater Than</label>
+                <input id="ibuGreaterThan" #ibuGreaterThan type="number" (blur)="addSearchCriteria('ibu_gt', ibuGreaterThan.value)" />
+            </div>
+            <div>
+                <label for="ibuLessThan">IBU Less Than</label>
+                <input id="ibuLessThan" #ibuLessThan type="number" (blur)="addSearchCriteria('ibu_lt', ibuLessThan.value)" />
+            </div>
+        </div>
+        <div class="search-by">
+            <div>
+                <label for="ebcGreaterThan">EBC Greater Than</label>
+                <input id="ebcGreaterThan" #ebcGreaterThan type="number" (blur)="addSearchCriteria('ebc_gt', ebcGreaterThan.value)" />
+            </div>
+            <div>
+                <label for="ebcLessThan">EBC Less Than</label>
+                <input id="ebcLessThan" #ebcLessThan type="number" (blur)="addSearchCriteria('ebc_lt', ebcLessThan.value)" />
+            </div>
+            <div>
+                <label for="hops">Has Hop Ingredient</label>
+                <input id="hops" #hops type="text" (blur)="addSearchCriteria('hops', hops.value)" />
+            </div>
+            <div>
+                <label for="malts">Has Malt Ingredient</label>
+                <input id="malts" #malts type="text" (blur)="addSearchCriteria('malt', malts.value)" />
+            </div>
+            <div>
+                <label for="yeast">Has Yeast Ingredient</label>
+                <input id="yeast" #yeast type="text" (blur)="addSearchCriteria('yeast', yeast.value)" />
+            </div>
+        </div>
+    </section>
+
+    <div class="search-button">
+        <button (click)="retrieveSearchResults()">Search</button>
+    </div>
+
+    <section id="search-results" *ngIf="beerSearchResults">
+        <div class="loading-indicator" *ngIf="shouldShowLoadingMessage">
+            Loading...
+        </div>
+        <div class="many-results-message" *ngIf="shouldShowManyResultsMessage">
+            Too many results matched that search criteria. Some results may not be listed. Please try narrowing down your search.
+        </div>
+        <beer-list [beerList]="beerSearchResults" [currentPage]="pageName"></beer-list>
+    </section>
+
+    <div class="no-results-message" *ngIf="shouldShowNoResultsMessage">
+        No Results Found
+    </div>
+</div>

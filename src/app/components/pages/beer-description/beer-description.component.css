@@ -1,0 +1,100 @@
+
+span {
+    font-size: 18px;
+}
+
+.beer-information {
+    margin-left: 1.25em;
+    margin-right: 1.25em;
+}
+
+.generic-information,
+.generic-information-1,
+.generic-information-2 {
+    display: grid;
+}
+
+.generic-information {
+    grid-template-columns: 1fr 1fr;
+}
+
+.generic-information-2 {
+    grid-template-rows: .75fr 1fr;
+}
+
+.beer-description,
+.beer-metrics,
+.history,
+.ingredients,
+.how-to {
+    border-color: #f5f6fa;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 1em;
+    margin: 1em;
+}
+
+.beer-description,
+.how-to {
+    background-color: #303952;
+}
+
+.history,
+.ingredients {
+    background-color: #130f40;
+}
+
+.beer-metrics {
+    background-color: #192a56;
+}
+
+.brewing-information {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width:800px) {
+    .generic-information,
+    .generic-information-1,
+    .generic-information-2,
+    .brewing-information {
+        display: block;
+    }
+}
+
+.information-title,
+.brewery-information-title {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.beer-tagline,
+.ingredient-title,
+.how-to-step-title {
+    font-size: 22px;
+    font-style: italic;
+}
+
+.description,
+.ingredient,
+.how-to-step {
+    margin: .5em;
+}
+
+ul {
+    list-style-type: none;
+    padding: .15em;
+    margin: .15em;
+}
+
+ul > li {
+    margin-top: .1em;
+    margin-bottom: .25em;
+    font-size: 18px;
+}
+
+.pairs-with,
+.pairing-item {
+    font-style: italic;
+}

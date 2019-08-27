@@ -1,0 +1,14 @@
+<div *ngIf="beerList">
+    <page-header
+        [pageHeader]="'BrewDog Beers'"
+        [linkOneText]="previousPageText"
+        [linkOne]="previousPageLink"
+        [linkTwoText]="nextPageText"
+        [linkTwo]="nextPageLink">
+    </page-header>
+
+    <beer-list
+        [beerList]="beerList"
+        [currentPage]="'/beer-menu/' + beerPageNumber">
+    </beer-list>
+</div>

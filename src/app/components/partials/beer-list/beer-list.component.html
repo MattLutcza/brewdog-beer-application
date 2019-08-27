@@ -1,0 +1,16 @@
+<div class="beer-list">
+    <a [routerLink]="" class="beer-item" *ngFor="let beer of beerList" (click)="goToBeerDescriptionPage(beer)">
+        <div>
+            <span class="item-name">{{ beer.name}}</span>
+        </div>
+        <div>
+            <span class="item-tagline"> {{ beer.tagline}} </span>
+        </div>
+        <div>
+            <span class="item-description">{{ beer.description }}</span>
+        </div>
+        <div>
+            <span class="item-metrics">{{ beer.abv }} ABV  |  {{ beer.ibu }} IBU</span>
+        </div>
+    </a>
+</div>

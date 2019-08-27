@@ -1,0 +1,116 @@
+<div *ngIf="beer">
+
+    <page-header [pageHeader]="beer.name" [linkOneText]="backPageText" [linkOne]="backPageLink" [linkTwoText]="'Random'" [linkTwo]="'/random'" ></page-header>
+
+    <div class="beer-information">
+        <div class="generic-information">
+            <div class="generic-information-1">
+                <div class="beer-description">
+                    <div>
+                        <span class="information-title">
+                            {{ beer.tagline}}
+                        </span>
+                    </div>
+                    <div class="description">
+                        <span>{{ beer.description }}</span>
+                    </div>
+                    <div>
+                        <span class="pairs-with">Pairs well with:</span>
+                        <span class="pairing-item" *ngFor="let pairItem of beer.food_pairing; let isLastItem=last">
+                            {{ isLastItem ? 'or' : '' }} {{ pairItem }} {{ isLastItem ? '' : ',' }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="generic-information-2">
+                <div class="history">
+                    <div>
+                        <span class="information-title">First Brewed</span>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                {{ beer.name }} was first brewed in {{ beer.first_brewed }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beer-metrics">
+                    <div>
+                        <span class="information-title">The Numbers</span>
+                    </div>
+                    <ul>
+                        <li class="metrics-content-1">{{ beer.abv }} ABV | {{ beer.ibu }} IBU | {{ beer.target_fg }} FG | {{ beer.target_og }} OG</li>
+                        <li class="metrics-content-2">{{ beer.attenuation_level }} Attenuation | {{ beer.srm }} SRM | {{ beer.ebc }} EBC</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="brewing-information">
+            <div class="ingredients">
+                <span class="brewery-information-title">Brewing Ingredients</span>
+                <div class="ingredient" *ngIf="beer.ingredients.hops">
+                    <span class="ingredient-title">Hops</span>
+                    <ul>
+                        <li *ngFor="let hopIngredient of beer.ingredients.hops">
+                            {{ hopIngredient.name }} ({{ hopIngredient.amount.value }} {{ hopIngredient.amount.unit }}) added at the {{ hopIngredient.add }} for a {{ hopIngredient.attribute }} attribute
+                        </li>
+                    </ul>
+                </div>
+                <div class="ingredient" *ngIf="beer.ingredients.malt">
+                    <span class="ingredient-title">Malts</span>
+                    <ul>
+                        <li *ngFor="let maltIngredient of beer.ingredients.malt">
+                            {{ maltIngredient.name }} ({{ maltIngredient.amount.value }} {{ maltIngredient.amount.unit }})
+                        </li>
+                    </ul>
+                </div>
+                <div class="ingredient" *ngIf="beer.ingredients.yeast">
+                    <span class="ingredient-title">Yeast</span>
+                    <ul>
+                        <li>{{ beer.ingredients.yeast }}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="how-to">
+                <span class="brewery-information-title">Brewing Steps</span>
+                <div class="how-to-step" *ngIf="beer.method.mash_temp">
+                    <span class="how-to-step-title">Mashing</span>
+                    <ul>
+                        <li *ngFor="let mashTemp of beer.method.mash_temp">
+                            <span>{{ mashTemp.temp.value }} {{ mashTemp.temp.unit }}</span><span *ngIf=mashTemp.duration> for {{ mashTemp.duration }} minutes</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="how-to-step">
+                    <div>
+                        <span class="how-to-step-title">Boiling</span>
+                    </div>
+                    <ul>
+                        <li>Start volume of {{ beer.boil_volume.value }} {{ beer.boil_volume.unit }}</li>
+                        <li>End volume of {{ beer.volume.value }} {{ beer.volume.unit }}</li>
+                    </ul>
+                </div>
+                <div class="how-to-step">
+                    <span class="how-to-step-title">Fermentation</span>
+                    <ul>
+                        <li>
+                           {{ beer.method.fermentation.temp.value }} {{ beer.method.fermentation.temp.unit }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="how-to-step" *ngIf="beer.method.twist">
+                    <div><span class="how-to-step-title">Brewing twist</span></div>
+                    <ul><li>{{ beer.method.twist }}</li></ul>
+                </div>
+                <div class="how-to-step" *ngIf="beer.brewers_tips">
+                    <div><span class="how-to-step-title">Brewing tips</span></div>
+                    <ul><li>{{ beer.brewers_tips }}</li></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

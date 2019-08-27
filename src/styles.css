@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Baloo+Chettan|Acme|Shadows+Into+Light");
+
+body {
+    background-color: #273c75;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Acme', serif;
+    min-height: 100%;
+    color: #f5f6fa;
+}

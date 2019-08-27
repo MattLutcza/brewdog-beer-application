@@ -1,0 +1,142 @@
+h1 {
+    text-align: center;
+    font-size: 40px;
+    margin: 1em;
+    margin-top: .5em;
+}
+
+.logo {
+    background-color: #000000;
+    border-color: #f5f6fa;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 2px;
+    display: block;
+    padding: 1em;
+    text-align: center;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.logo > img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    .logo {
+        width: 75%;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 700px) {
+    h1 {
+        font-size: 34px;
+    }
+
+    .logo {
+        width: 50%;
+    }
+}
+
+
+section {
+    margin: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    text-align: center;
+    border-color: #f5f6fa;
+    border-style: solid;
+    border-width: 1px;
+    padding: 1em;
+    border-radius: 15px;
+    background-color: #192a56;
+}
+
+.home-link-section > a {
+    display: inline-block;
+    font-size: 1.1em;
+    margin: 2%;
+}
+
+.brewdog-start-menu {
+    text-align: center;
+    margin: .75em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.brewdog-link-button {
+    margin: 1em;
+    padding: 1em;
+    border-radius: 50%;
+    background-color: #2f3640;
+    color: #f5f6fa;
+    font-size: 20px;
+    border-color: #f5f6fa;
+    border-width: 1px;
+    border-style: solid;
+    font-style: italic;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brewdog-link-button:hover {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.28), 0 4px 15px 0 rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.active {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.28), 0 4px 15px 0 rgba(0, 0, 0, 0.25);
+}
+
+.technical-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #273c75;
+}
+
+.extra-link-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width:70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 650px) {
+    .brewdog-start-menu {
+        display: block;
+    }
+    .extra-link-section {
+        display: block;
+    }
+}
+
+@media (min-width: 651px) and (max-width: 850px) {
+    .brewdog-start-menu {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.home-information-section {
+    border-color: #f5f6fa;
+    border-style: solid;
+    border-width: 1px;
+}
+
+
+

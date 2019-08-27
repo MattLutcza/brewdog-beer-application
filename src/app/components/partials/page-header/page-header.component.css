@@ -1,0 +1,36 @@
+.page-header {
+    background-color: #273c75;
+    border-bottom-color: #f5f6fa;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.header-link {
+    color: #f5f6fa;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    width: 15%;
+}
+
+.page-header > h1,
+.page-header-spacing > h1 {
+    display: inline-block;
+    font-size: 40px;
+    text-align: center;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    width: 68.5%;
+}
+
+@media (max-width:700px) {
+    .page-header > h1,
+    .page-header-spacing > h1 {
+        font-size: 30px;
+        margin-top: .25em;
+        margin-bottom: .25em;
+    }
+}

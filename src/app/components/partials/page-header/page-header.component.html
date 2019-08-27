@@ -1,0 +1,11 @@
+<section class="page-header">
+    <a *ngIf="linkOneText" href="#" class="header-link" [routerLink]="" (click)="navigateTo(linkOne)">{{ linkOneText }}</a>
+    <h1>{{ pageHeader }}</h1>
+    <a *ngIf="linkTwoText" href="#" class="header-link" [routerLink]="" (click)="navigateTo(linkTwo)">{{ linkTwoText }}</a>
+</section>
+
+<section class="page-header-spacing">
+    <a *ngIf="linkOneText" href="#" class="header-link" [routerLink]="">{{ linkOneText }}</a>
+    <h1>{{ pageHeader }}</h1>
+    <a *ngIf="linkTwoText" href="#" class="header-link" [routerLink]="">{{ linkTwoText }}</a>
+</section>

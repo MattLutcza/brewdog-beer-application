@@ -1,0 +1,39 @@
+<div>
+    <h1>Matt's BrewDog Website Application</h1>
+
+    <div class="logo" [@rotatedState]='imageRotationValue' (click)="triggerImageAnimation()">
+        <img src="assets/brewdog-logo.png" />
+    </div>
+
+    <section class="home-introduction-section">
+        Welcome to Matt's BrewDog Website! Here you have the option of going through the entire beer list of BrewDog's renowned brews, and
+        discovering how they're made. If you know what you're looking for, then you can also narrow your search to a particular subset of beers.
+        Even if you don't know what you're interested in, you can leave it to us and we can pick a random beer to show you information about!
+    </section>
+
+    <div class="brewdog-start-menu">
+        <a class="brewdog-link-button" href="#" [routerLink]="" (click)="navigateToBeerMenuPage()">Full Beer List</a>
+        <a class="brewdog-link-button" href="#" [routerLink]="" (click)="navigateToBeerSearchPage()">Search Beer</a>
+        <a class="brewdog-link-button" href="#" [routerLink]="" (click)="navigateToRandomBeerPage()">Random beer</a>
+        <a [ngClass]="{ 'active': applicationInformationCollapsableOpen, 'collapsible': true, 'brewdog-link-button': true}" (click)="openCloseInformation(information)">Technical Stuff</a>
+    </div>
+
+    <div #information class="technical-content">
+        <section class="application-information-section">
+            This is just a simple Angular 8 application built by using the @angular/cli module and then doing 'ng new'. It is purely
+            Angular 8 + CSS. There is no NodeJS or Express integration, because this application utilizes the PunkAPI to get BrewDog
+            beer information. The PunkAPI is a simple REST API that provides a few different ways to retrieve BrewDog beer details.
+        </section>
+
+        <!-- TODO:
+            1) Add tests.
+            2) Configure specs (tsconfig.spec.json)
+        -->
+
+        <div class="extra-link-section">
+            <a class="brewdog-link-button extra-link" href="https://www.brewdog.com/usa" target="_blank">BrewDog Website</a>
+            <a class="brewdog-link-button extra-link" href="https://punkapi.com/documentation/v2" target="_blank">PunkAPI Info</a>
+        </div>
+    </div>
+
+</div>
