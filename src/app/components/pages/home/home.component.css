@@ -111,8 +111,8 @@ section {
 
 .extra-link-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    width:70%;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
